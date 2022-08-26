@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+List
+{% endblock %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'crud/CSS/viewlist.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<h1>{{msg}}</h1>
+<form action="/">
+  <input type="submit" value="BACK">
+</form>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">S.No.</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        {% for listdata in data %}
+        <tbody>
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ listdata.id }}</td>
+            <td>{{ listdata.user }}</td>
+            <td>{{ listdata.email }}</td>
+            <td>{{ listdata.phone }}</td>
+            <td class="center"><a href="/update?id={{listdata.id}}" class="btn btn-primary">Update</a></td>
+            <td class="center"><a href="/delete?id={{listdata.id}}" class="btn btn-danger">Delete</a></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
