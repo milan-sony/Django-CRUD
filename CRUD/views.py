@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from CRUD.models import register
+from .models import register
 from django.contrib import messages
 
 # Create your views here.
@@ -8,7 +8,7 @@ from django.contrib import messages
 def index(request):
   return render(request,"registerform.html")
 
-# Value Insert
+# Value Insert to database,table
 def valueinsert(request):
   if request.method == 'POST':
     name = request.POST['name']
@@ -17,10 +17,14 @@ def valueinsert(request):
     register(name = name, email = email, contact = contact).save()
     messages.success(request,"Value Inserted Successfully")
     return render(request,"registerform.html")
-    # return redirect (viewlist)
+    # return redirect ('viewlist')
   else:
     return render(request,"404.html")
 
-# Value Listed
+# Value Listed from database,table
 def viewlist(request):
-  return render(request,"viewlist.html")
+  value = register.objects.all()
+  if(value != ''):
+    return render(request,"viewlist.html",{'data':value})
+  else:
+    return render(request,"viewlist.html")
