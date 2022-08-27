@@ -6,5 +6,6 @@ class register(models.Model):
   email = models.EmailField()
   contact = models.IntegerField()
 
+# To give custom table name
   # class Meta:
-  # db_table = 'data'
+  #   db_table = 'data'
