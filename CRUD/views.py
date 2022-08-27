@@ -8,7 +8,7 @@ from django.contrib import messages
 def index(request):
   return render(request,"registerform.html")
 
-# Value Insert to database,table
+# value insert to database,table
 def valueinsert(request):
   if request.method == 'POST':
     name = request.POST['name']
@@ -21,10 +21,16 @@ def valueinsert(request):
   else:
     return render(request,"404.html")
 
-# Value Listed from database,table
+# value listed from database,table
 def viewlist(request):
   value = register.objects.all()
   if(value != ''):
     return render(request,"viewlist.html",{'data':value})
   else:
     return render(request,"viewlist.html")
+
+# update value in database
+def update(request, id):
+  value = register.objects.get(id = id)
+  return render(request,"updateform.html",{'data':value})
+

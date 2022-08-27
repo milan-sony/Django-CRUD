@@ -17,7 +17,7 @@ Register
         <h3>Registration Form</h3>
       </div>
       <div class="card-body">
-        <form action="{% url 'valueinsert' %}" method="POST">
+        <form action="/valueinsert" method="POST">
           {% csrf_token %}
           <div class="form-group">
             <label for="name">Name</label>
@@ -34,7 +34,7 @@ Register
           <input type="submit" value="Submit" class="btn btn-primary form-control">
         </form>
         {% for message in messages %}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
           {{message}}
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -49,17 +49,13 @@ Register
   <div class="row">
     <div class="col">
       <div class="button d-flex justify-content-center mt-3">
-        <!-- <form action="/view">
-          <input type="submit" value="View List" class="btn btn-primary">
-        </form> -->
-        <!-- <a href="viewlist/" class="btn btn-primary">VIEWLIST</a> -->
-        <a href="{% url 'viewlist' %}" class="btn btn-primary">VIEWLIST</a>
+        <a href="viewlist/" class="btn btn-primary">VIEWLIST</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- jQuery CDN -->
+<!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- JQuery to hide alert automatically -->
 <script>
