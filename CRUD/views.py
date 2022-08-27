@@ -32,5 +32,18 @@ def viewlist(request):
 # update value in database
 def update(request, id):
   value = register.objects.get(id = id)
+  if request.method == 'POST':
+    name = request.POST['name']
+    email = request.POST['email']
+    contact = request.POST['contact']
+
+    # tablename.rowname = name tag name  | updating/inserting values in table
+    value.name = name
+    value.email = email
+    value.contact = contact
+    value.save()
+    messages.success(request,"Data Updated Successfully")
+    return redirect('viewlist')
+
   return render(request,"updateform.html",{'data':value})
 
