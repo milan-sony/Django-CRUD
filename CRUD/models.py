@@ -7,5 +7,5 @@ class register(models.Model):
   contact = models.IntegerField()
 
 # To give custom table name
-  # class Meta:
-  #   db_table = 'data'
+  class Meta:
+    db_table = 'data'
