@@ -47,3 +47,12 @@ def update(request, id):
 
   return render(request,"updateform.html",{'data':value})
 
+# delete items,values
+
+def delete(request, id):
+  value = register.objects.get(id = id)
+  value.delete()
+  messages.error(request,"Data deleted Successfully")
+  return redirect('viewlist')
+
+

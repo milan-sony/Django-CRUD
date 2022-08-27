@@ -12,14 +12,26 @@ List
 {% block body %}
 
 <a href="{% url 'index' %}" class="btn btn-primary">BACK</a>
-{% for message in messages %}
-<div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
-  {{message}}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-{% endfor %}
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == 'error' %}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% else %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -44,7 +56,8 @@ List
             <td>{{values.email}}</td>
             <td>{{values.contact}}</td>
             <td class="center"><a href="/update/{{values.id}}" class="btn btn-primary">Update</a></td>
-            <td class="center"><a href="/delete?id={{values.id}}" class="btn btn-danger">Delete</a></td>
+            <!-- <td class="center"><a href="/delete?id={{values.id}}" class="btn btn-danger">Delete</a></td> -->
+            <td class="center"><a href="/delete/{{values.id}}" class="btn btn-danger">Delete</a></td>
           </tr>
         </tbody>
         {% endfor %}

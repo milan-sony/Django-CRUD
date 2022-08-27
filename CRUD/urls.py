@@ -6,4 +6,5 @@ urlpatterns = [
     path('valueinsert',views.valueinsert),
     path('viewlist/', views.viewlist, name='viewlist'),
     path('update/<int:id>',views.update),
+    path('delete/<int:id>',views.delete),
 ]
