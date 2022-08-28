@@ -59,6 +59,6 @@ def search(request):
     value = register.objects.filter(name__icontains = search)
     return render(request,"search.html",{'searchvalue':search, 'data':value})
   else:
-    return redirect('viewlist')
+    return render(request,"404.html")
 
 
