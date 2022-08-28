@@ -49,7 +49,6 @@ def update(request, id):
   return render(request,"updateform.html",{'data':value})
 
 # delete items,values
-
 def delete(request, id):
   value = register.objects.get(id = id)
   value.delete()
@@ -57,12 +56,11 @@ def delete(request, id):
   return redirect('viewlist')
 
 # search
-
 def search(request):
   if request.method == 'POST':
     search = request.POST['search']
     value = register.objects.filter(id__icontains = search)
-    return render(request,"search.html",{'data':value})
+    return render(request,"search.html",{'searchvalue':search, 'data':value})
   else:
     return redirect('viewlist')
 

@@ -5,6 +5,7 @@ Search
 {% endblock %}
 
 {% block body %}
+{% if searchvalue %}
 <div class="container">
   <div class="col">
     <div class="col">
@@ -38,5 +39,7 @@ Search
     </table>
   </div>
 </div>
-
+{% else %}
+<h1 class="text-center">No Search Found</h1>
+{% endif %}
 {% endblock %}
