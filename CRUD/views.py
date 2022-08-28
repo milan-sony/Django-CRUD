@@ -45,8 +45,8 @@ def update(request, id):
     value.save()
     messages.success(request,"Data Updated Successfully")
     return redirect('viewlist')
-
-  return render(request,"updateform.html",{'data':value})
+  else:
+    return render(request,"updateform.html",{'data':value})
 
 # delete items,values
 def delete(request, id):
