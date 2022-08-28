@@ -56,7 +56,7 @@ def delete(request, id):
 def search(request):
   if request.method == 'POST':
     search = request.POST['search']
-    value = register.objects.filter(id__icontains = search)
+    value = register.objects.filter(name__icontains = search)
     return render(request,"search.html",{'searchvalue':search, 'data':value})
   else:
     return redirect('viewlist')

@@ -10,7 +10,7 @@ List
 {% endblock %}
 
 {% block body %}
-{% if value %}
+{% if data %}
 <a href="{% url 'index' %}" class="btn btn-primary">Insert Data</a>
 
 <div class="container">
@@ -19,7 +19,7 @@ List
       <div class="col-md-4 offset-md-4 mb-3 mt-3">
         <form action="{% url 'search' %}" method="POST">
           {% csrf_token %}
-          <input type="text" name="search" placeholder="Search Id" class="form-control" autocomplete="off">
+          <input type="text" name="search" placeholder="Search Name" class="form-control" autocomplete="off">
           <button type="submit" class="btn btn-primary form-control mt-3">SEARCH</button>
         </form>
       </div>
@@ -72,10 +72,10 @@ List
     </div>
   </div>
 </div>
+
 {% else %}
 <h1 class="text-center mt-5">No Data Found</h1>
 <p class="text-center mt-3"><a href="{% url 'index' %}">Clich Here! to add new data</a></p>
-
 {% endif %}
 
 <!-- JQuery CDN -->
