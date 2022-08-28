@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="col">
+    <div class="col">
+      <a href="{% url 'viewlist' %}" class="btn btn-primary">View all list</a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">S.No.</th>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      {% for values in data %}
+      <tbody id="mytable">
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{values.id}}</td>
+          <td>{{values.name}}</td>
+          <td>{{values.email}}</td>
+          <td>{{values.contact}}</td>
+          <td class="center"><a href="/update/{{values.id}}" class="btn btn-primary">Update</a></td>
+          <td class="center"><a href="/delete/{{values.id}}" class="btn btn-danger">Delete</a></td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

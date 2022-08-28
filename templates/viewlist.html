@@ -11,13 +11,17 @@ List
 
 {% block body %}
 
-<a href="{% url 'index' %}" class="btn btn-primary">Insert Value</a>
+<a href="{% url 'index' %}" class="btn btn-primary">Insert Data</a>
 
 <div class="container">
   <div class="row">
     <div class="col">
       <div class="col-md-4 offset-md-4 mb-3 mt-3">
-        <input type="text" name="search" id="search" placeholder="Search" class="form-control">
+        <form action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" name="search" placeholder="Search Id" class="form-control" autocomplete="off">
+          <button type="submit" class="btn btn-primary form-control mt-3">SEARCH</button>
+        </form>
       </div>
       {% if messages %}
         {% for message in messages %} 
@@ -71,6 +75,7 @@ List
 
 <!-- JQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <!-- JQuery to hide alert automatically -->
 <script>
   $(function(){
@@ -79,9 +84,9 @@ List
     }, 5000);
   });
 </script>
-<!-- Search -->
 
-<script>
+<!-- Search -->
+<!-- <script>
   $("document").ready(function(){
     $('#search').keyup(function(){
       var value = $(this).val().toLowerCase()
@@ -90,6 +95,6 @@ List
       })
     })
   });
-</script>
+</script> -->
 
 {% endblock %}

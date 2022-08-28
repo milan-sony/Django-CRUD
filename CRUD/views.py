@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import register
 from django.contrib import messages
+# from django.http import HttpResponse
 
 # Create your views here.
 
@@ -54,5 +55,15 @@ def delete(request, id):
   value.delete()
   messages.error(request,"Data deleted Successfully")
   return redirect('viewlist')
+
+# search
+
+def search(request):
+  if request.method == 'POST':
+    search = request.POST['search']
+    value = register.objects.filter(id__icontains = search)
+    return render(request,"search.html",{'data':value})
+  else:
+    return redirect('viewlist')
 
 
