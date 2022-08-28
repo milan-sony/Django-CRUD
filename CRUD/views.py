@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import register
 from django.contrib import messages
-# from django.http import HttpResponse
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -25,10 +25,7 @@ def valueinsert(request):
 # value listed from database,table
 def viewlist(request):
   value = register.objects.all()
-  if(value != ''):
-    return render(request,"viewlist.html",{'data':value})
-  else:
-    return render(request,"viewlist.html")
+  return render(request,"viewlist.html",{'data':value})
 
 # update value in database
 def update(request, id):
