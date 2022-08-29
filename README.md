@@ -1,6 +1,6 @@
 # Django-CRUD_MySQL
 
-This is a simple project that perfroms CRUD operations in Django using Mysql database.
+This is a simple project that performs CRUD operations in Django using Mysql database.
 ## Run Locally
 You will need to install Python on  you system. Head over to https://www.python.org/downloads/ to download python.
 
