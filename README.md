@@ -1,4 +1,3 @@
-
 # Django-CRUD_MySQL
 
 This is a simple project that perfroms CRUD operations in Django using Mysql database.
@@ -17,15 +16,23 @@ Then go to the project folder
 ```bash
   cd Django_CRUD
 ```
+
 (This is optional, but strongly recommended) Make a virtual environment
 
 ```bash
   python -m venv venv
 ```
+
 Activate the virtual environment
 
 ```bash
   venv/Scripts/activate
+```
+
+If error occurs when activating virtual environment, run the following command
+
+```bash
+  Set-ExecutionPolicy Unrestricted
 ```
 
 Install the dependencies needed for this project
@@ -33,6 +40,7 @@ Install the dependencies needed for this project
 ```bash
   pip install -r requirement.txt
 ```
+
 Now minimize the terminal and make a database on MySQL named django_crud
 
 Once you have created the database, head back to the terminal and make migrations
@@ -40,6 +48,7 @@ Once you have created the database, head back to the terminal and make migration
 ```bash
   python manage.py makemigrations
 ```
+
 This will create all the migration files (database migrations) required to run this project
 
 Now apply this migrations
@@ -55,6 +64,3 @@ Then run the server
 ```
 
 Once the server is hosted click on the link http://127.0.0.1:8000/
-
-
-
