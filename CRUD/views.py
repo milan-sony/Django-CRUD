@@ -16,7 +16,7 @@ def valueinsert(request):
     email = request.POST['email']
     contact = request.POST['contact']
     register(name = name, email = email, contact = contact).save()
-    messages.success(request,"Value Inserted Successfully")
+    messages.success(request,"Data Inserted Successfully")
     return render(request,"registerform.html")
     # return redirect ('viewlist')
   else:
