@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-List
+Lists
 {% endblock %}
 
 {% block style %}
@@ -78,9 +78,6 @@ List
 <p class="text-center mt-3"><a href="{% url 'index' %}">Clich Here! to add new data</a></p>
 {% endif %}
 
-<!-- JQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 <!-- JQuery to hide alert automatically -->
 <script>
   $(function(){
@@ -89,17 +86,5 @@ List
     }, 5000);
   });
 </script>
-
-<!-- Search -->
-<!-- <script>
-  $("document").ready(function(){
-    $('#search').keyup(function(){
-      var value = $(this).val().toLowerCase()
-      $("#mytable tr").filter(function(){
-        $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
-      })
-    })
-  });
-</script> -->
 
 {% endblock %}
