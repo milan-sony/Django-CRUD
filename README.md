@@ -9,7 +9,7 @@ Once you have downloaded Python on your system,
 run the following command inside your git enabled terminal
 
 ```bash
-  git clone https://github.com/milan-sony/Django_CRUD.git
+  git clone https://github.com/milan-sony/Django-CRUD.git
 ```
 
 Then go to the project folder
