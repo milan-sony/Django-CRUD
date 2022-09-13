@@ -44,7 +44,7 @@ Install the dependencies needed for this project
 
 Now minimize the terminal and make a database on MySQL named django_crud
 
-Once you have created the database, open the file named .env.example and do as per mentioned inside this file
+Once you have created the database, open this project folder inside a code editor (if you don't have a code editor install one). Then open the file named .env.example and do as per mentioned  on that file
 
 After creating the .env file, head back to the terminal and make migrations
 
