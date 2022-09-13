@@ -6,7 +6,7 @@ You will need to install Python on  you system. Head over to https://www.python.
 (Dont Forget to Tick Add to Path while installing Python)
 
 Once you have downloaded Python on your system, 
-run the following command inside your git enabled terminal
+run the following command inside your terminal
 
 ```bash
   git clone https://github.com/milan-sony/Django-CRUD.git
@@ -30,7 +30,7 @@ Activate the virtual environment
   venv/Scripts/activate
 ```
 
-If error occurs when activating virtual environment, run the following command (inside powershell - run as administrator)
+If error occurs when activating virtual environment, run the following command
 
 ```bash
   Set-ExecutionPolicy Unrestricted
