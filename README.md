@@ -15,7 +15,7 @@ run the following command inside your git enabled terminal
 Then go to the project folder
 
 ```bash
-  cd Django_CRUD
+  cd Django-CRUD
 ```
 
 (This is optional, but strongly recommended) Make a virtual environment
