@@ -30,7 +30,7 @@ Activate the virtual environment
   venv/Scripts/activate
 ```
 
-If error occurs when activating virtual environment, run the following command
+If error occurs when activating virtual environment, run the following command (inside powershell - run as administrator)
 
 ```bash
   Set-ExecutionPolicy Unrestricted
