@@ -1,4 +1,4 @@
-# Django-CRUD_MySQL
+# Django CRUD
 
 This is a simple project that performs CRUD operations in Django using Mysql database.
 ## Run Locally
@@ -9,13 +9,13 @@ Once you have downloaded Python on your system,
 run the following command inside your terminal
 
 ```bash
-  git clone https://github.com/milan-sony/Django-CRUD.git
+  git clone https://github.com/milan-sony/django-CRUD.git
 ```
 
 Then go to the project folder
 
 ```bash
-  cd Django-CRUD
+  cd django-CRUD
 ```
 
 (This is optional, but strongly recommended) Make a virtual environment
